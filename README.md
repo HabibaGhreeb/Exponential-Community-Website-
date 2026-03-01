@@ -1,6 +1,7 @@
 # E_businness
 
-## Comments From Dr. Soliman
+## Comments
+- **ADD Dr. Soliman AS CONTRIBUTOR: karim.soliman@pua.edu.eg
 - **ID:** Add your ID?
 - **Name:** Add your name?
 - **Frontend:** Your frontend framework?
