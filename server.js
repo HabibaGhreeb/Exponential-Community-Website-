@@ -27,6 +27,7 @@ function createJsonFile(fileName) {
 createJsonFile("users.json");
 createJsonFile("meetings.json");
 createJsonFile("messages.json");
+createJsonFile("memberships.json");
 
 function readData(fileName) {
   const filePath = path.join(dataDir, fileName);
@@ -135,6 +136,36 @@ app.post("/api/book-meeting", (req, res) => {
     success: true,
     message: "Meeting booked successfully",
     meeting: newMeeting
+  });
+});
+
+app.post("/api/membership", (req, res) => {
+  const { name, email, plan } = req.body;
+
+  if (!name || !email || !plan) {
+    return res.status(400).json({
+      success: false,
+      message: "Name, email, and plan are required"
+    });
+  }
+
+  const memberships = readData("memberships.json");
+
+  const newMembership = {
+    id: Date.now(),
+    name,
+    email,
+    plan,
+    createdAt: new Date().toISOString()
+  };
+
+  memberships.push(newMembership);
+  writeData("memberships.json", memberships);
+
+  res.json({
+    success: true,
+    message: "Membership selected successfully",
+    membership: newMembership
   });
 });
 
