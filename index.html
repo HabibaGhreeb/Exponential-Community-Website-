@@ -209,8 +209,61 @@ h1.hero-h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue),va
 .tracks-hero-content{position:relative;z-index:1;max-width:700px}
 .tracks-cards-section{padding:4rem 5% 7rem}
 .tracks-cards-inner{max-width:1100px;margin:0 auto}
+.tracks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-top:3rem}
+.track-card{padding:2.2rem;cursor:pointer;position:relative}
+.track-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0;opacity:0;transition:opacity 0.3s}
+.track-card:hover::after{opacity:1}
+.tc1::after{background:linear-gradient(90deg,var(--blue),#38bdf8)}
+.tc2::after{background:linear-gradient(90deg,#f59e0b,#f97316)}
+.tc3::after{background:linear-gradient(90deg,var(--purple),#ec4899)}
+.tc4::after{background:linear-gradient(90deg,var(--green),#06b6d4)}
+.tc5::after{background:linear-gradient(90deg,#f87171,var(--purple))}
+.track-char{font-size:2.8rem;margin-bottom:1rem}
+.track-identity{font-family:var(--mono);font-size:0.68rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem}
+.track-name{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:0.6rem}
+.track-desc{color:var(--sub);font-size:0.9rem;margin-bottom:1.2rem;line-height:1.65}
+.track-bullets{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.track-bullets li{font-size:0.88rem;color:var(--muted);display:flex;align-items:flex-start;gap:8px}
+.track-bullets li::before{content:'→';color:var(--blue);flex-shrink:0;margin-top:2px}
+.tracks-final{padding:5rem 5%;text-align:center;border-top:1px solid var(--border)}
+.tracks-final-inner{max-width:500px;margin:0 auto}
 
-<!-- Temporary closing tags for commit 4. Next commit continues the full page. -->
+/* ============================================
+   ACTIVITIES PAGE
+   ============================================ */
+#activities-hero{min-height:50vh;display:flex;align-items:center;padding:8rem 5% 5rem;position:relative;overflow:hidden}
+.activities-hero-inner{position:relative;z-index:1;max-width:680px}
+.activities-main{padding:5rem 5% 7rem}
+.activities-inner{max-width:1100px;margin:0 auto}
+.why-rows{margin:3rem 0;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.why-row{display:flex;align-items:flex-start;gap:2rem;padding:1.6rem 2rem;border-bottom:1px solid var(--border);transition:background 0.2s}
+.why-row:last-child{border-bottom:none}
+.why-row:hover{background:rgba(59,130,246,0.03)}
+.why-arrow{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.why-title{font-weight:600;margin-bottom:0.2rem}
+.why-desc{color:var(--sub);font-size:0.9rem}
+.filter-bar{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filter-pill{background:transparent;border:1px solid var(--border);color:var(--muted);padding:8px 20px;border-radius:100px;font-family:var(--head);font-size:0.85rem;cursor:pointer;transition:all 0.2s}
+.filter-pill.active,.filter-pill:hover{border-color:var(--blue);color:var(--blue);background:rgba(59,130,246,0.08)}
+.activities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.act-card{padding:0;overflow:hidden}
+.act-thumb{height:140px;background:linear-gradient(135deg,var(--s2),var(--s1));border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative}
+.act-thumb::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at center,rgba(59,130,246,0.1) 0%,transparent 70%)}
+.act-body{padding:1.6rem}
+.act-type-date{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem}
+.act-title{font-size:1.05rem;font-weight:700;margin-bottom:0.4rem;letter-spacing:-0.01em}
+.act-desc{color:var(--sub);font-size:0.88rem;margin-bottom:1rem;line-height:1.65}
+.act-meta{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.act-meta-item{font-family:var(--mono);font-size:0.7rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+.act-value{font-size:0.82rem;color:var(--sub);margin-bottom:1.2rem;font-style:italic;padding:8px 12px;background:var(--s1);border-radius:8px;border-left:2px solid var(--blue)}
+.act-cta-btn{width:100%;padding:10px;border:none;border-radius:8px;font-family:var(--head);font-size:0.88rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.act-cta-btn.open{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff}
+.act-cta-btn.open:hover{box-shadow:0 0 30px rgba(59,130,246,0.3)}
+.act-cta-btn.closed{background:var(--s2);color:var(--muted);cursor:not-allowed;border:1px solid var(--border)}
+.act-value-section{margin-top:4rem;padding:3rem;background:var(--s1);border:1px solid var(--border);border-radius:20px;text-align:center}
+.act-value-title{font-size:1.4rem;font-weight:700;margin-bottom:0.6rem}
+
+<!-- Temporary closing tags for commit 5. Next commit continues the full page. -->
 
 </body>
 </html>
