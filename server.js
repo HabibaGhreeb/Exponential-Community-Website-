@@ -38,6 +38,46 @@ app.get("/api/status", (req, res) => {
   });
 });
 
+function readData(fileName) {
+  const filePath = path.join(dataDir, fileName);
+  const data = fs.readFileSync(filePath, "utf8");
+  return JSON.parse(data);
+}
+
+function writeData(fileName, data) {
+  const filePath = path.join(dataDir, fileName);
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+}
+
+app.post("/api/signup", (req, res) => {
+  const { name, email } = req.body;
+
+  if (!name || !email) {
+    return res.status(400).json({
+      success: false,
+      message: "Name and email are required"
+    });
+  }
+
+  const users = readData("users.json");
+
+  const newUser = {
+    id: Date.now(),
+    name,
+    email,
+    createdAt: new Date().toISOString()
+  };
+
+  users.push(newUser);
+  writeData("users.json", users);
+
+  res.json({
+    success: true,
+    message: "User signed up successfully",
+    user: newUser
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
