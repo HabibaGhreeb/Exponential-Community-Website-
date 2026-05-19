@@ -368,8 +368,60 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:4rem 5%;t
 .footer-copy{font-family:var(--mono);font-size:0.7rem;color:var(--muted)}
 
 /* RESPONSIVE */
+@media(max-width:900px){
+  .pain-grid{grid-template-columns:repeat(2,1fr)}
+  .pillars{grid-template-columns:1fr}
+  .acc-item.open .acc-body{grid-template-columns:1fr}
+  .unlock-grid{grid-template-columns:repeat(4,1fr)}
+  .bento{grid-template-columns:1fr 1fr}.bento-card.wide{grid-column:span 2}
+  .top3{grid-template-columns:1fr}.rank-card.gold{order:-1}
+  .projects-grid{grid-template-columns:1fr 1fr}
+  .plans-grid{grid-template-columns:1fr}
+  .meeting-cards{grid-template-columns:1fr}
+  .why-meeting-items{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:640px){
+  .pain-grid{grid-template-columns:1fr}
+  .activities-grid{grid-template-columns:1fr}
+  .tracks-grid{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .unlock-grid{grid-template-columns:repeat(2,1fr)}
+  .bento{grid-template-columns:1fr}.bento-card.wide{grid-column:span 1}
+  h1.hero-h1{font-size:3rem}
+  .cin-h2{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
 
-<!-- Temporary closing tags for commit 7. Next commit continues the full page. -->
+<div id="cursor-glow"></div>
+
+<!-- BOOT SCREEN -->
+<div id="boot">
+  <button class="boot-skip" onclick="skipBoot()">Skip intro</button>
+  <div class="boot-term">
+    <div class="boot-line" style="animation-delay:0.3s">&#62; Initializing Exponential OS...</div>
+    <div class="boot-line" style="animation-delay:0.9s">&#62; Loading developer growth system...</div>
+    <div class="boot-line green" style="animation-delay:1.5s">&#62; Roadmap engine online.</div>
+    <div class="boot-line green" style="animation-delay:1.9s">&#62; Community core online.</div>
+    <div class="boot-line green" style="animation-delay:2.3s">&#62; Experience lab online.</div>
+    <div class="boot-line dim" style="animation-delay:2.7s">&#62; All systems ready.</div>
+    <div class="boot-logo">
+      <div class="boot-logo-text">Exponential</div>
+    </div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="main-nav">
+  <div class="nav-logo" onclick="goPage('home')">Exponential</div>
+  <ul class="nav-links">
+    <li><a onclick="goPage('home')" data-page="home" class="active">Home</a></li>
+    <li><a onclick="goPage('tracks')" data-page="tracks">Tracks</a></li>
+    <li><a onclick="goPage('activities')" data-page="activities">Activities</a></li>
+
+<!-- Temporary closing tags for commit 8. Next commit continues the full page. -->
 
 </body>
 </html>
