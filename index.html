@@ -420,8 +420,61 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:4rem 5%;t
     <li><a onclick="goPage('home')" data-page="home" class="active">Home</a></li>
     <li><a onclick="goPage('tracks')" data-page="tracks">Tracks</a></li>
     <li><a onclick="goPage('activities')" data-page="activities">Activities</a></li>
+    <li><a onclick="goPage('achievements')" data-page="achievements">Achievements</a></li>
+    <li><a onclick="goPage('membership')" data-page="membership">Membership</a></li>
+    <li><a onclick="goPage('meeting')" data-page="meeting">Book Free Meeting</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn-ghost">Login</button>
+    <button class="btn-primary">Sign Up</button>
+  </div>
+</nav>
 
-<!-- Temporary closing tags for commit 8. Next commit continues the full page. -->
+<!-- ============================================
+     HOME PAGE
+     ============================================ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section id="home-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-radial"></div>
+    <div class="code-float cf1">
+      <span class="kw">const</span> <span class="fn">dev</span> = <span class="str">"exponential"</span><br>
+      <span class="kw">while</span> (growing) { learn() }
+    </div>
+    <div class="code-float cf2">
+      <span class="fn">track</span>.<span class="kw">join</span>(<span class="str">"backend"</span>)<br>
+      <span class="fn">score</span>.<span class="kw">increment</span>(+<span class="str">10</span>)
+    </div>
+    <div class="code-float cf3">
+      <span class="kw">git commit</span> -m <span class="str">"shipped first API"</span>
+    </div>
+    <div class="hero-content">
+      <div class="hero-mono">&gt; developer_os.v2 — Egypt &amp; MENA</div>
+      <h1 class="hero-h1">Stop Learning.<br><em>Start Becoming.</em></h1>
+      <p class="hero-sub">A structured system for developers who are done being confused — and ready to grow through real tracks, projects, events, workshops, and hackathons.</p>
+      <div class="hero-ctas">
+        <button class="btn-hero" onclick="goPage('tracks')">Enter the System →</button>
+        <button class="btn-hero-sec" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+      </div>
+      <div class="hero-proof"><span>●</span> <span style="color:var(--green)">2,400+</span> developers already inside</div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSIS -->
+  <section id="diagnosis">
+    <div class="inner">
+      <div class="mono-tag">system.diagnosis</div>
+      <h2 class="section-title reveal">Every developer hits<br>the same wall.</h2>
+      <div class="pain-grid">
+        <div class="glass pain-card reveal" style="transition-delay:0ms">
+          <div class="pain-icon">😤</div>
+          <p class="pain-text"><strong>"I've watched 200 tutorials.</strong> I still can't build anything real."</p>
+        </div>
+        <div class="glass pain-card revealed highlighted reveal" style="transition-delay:80ms">
+
+<!-- Temporary closing tags for commit 9. Next commit continues the full page. -->
 
 </body>
 </html>
