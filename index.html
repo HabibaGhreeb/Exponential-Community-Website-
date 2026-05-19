@@ -842,8 +842,61 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:4rem 5%;t
           <ul class="track-bullets">
             <li>Strengthens problem-solving mindset</li>
             <li>Builds deep programming understanding</li>
+            <li>Prepares you for any track or path</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tracks-final">
+    <div class="tracks-final-inner">
+      <h2 class="section-title reveal" style="font-size:2rem">Found your path?</h2>
+      <p class="section-sub reveal" style="margin:0 auto 2rem">Your identity is waiting inside Exponential. One subscription, all tracks, zero confusion.</p>
+      <button class="btn-primary reveal" style="font-size:1rem;padding:14px 36px" onclick="goPage('meeting')">Start Your Journey →</button>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo">Exponential</div>
+    <div class="footer-tagline">Developer OS — Egypt &amp; MENA</div>
+    <div class="footer-links">
+      <a onclick="goPage('home')">Home</a><a onclick="goPage('tracks')">Tracks</a><a onclick="goPage('activities')">Activities</a><a onclick="goPage('membership')">Membership</a><a onclick="goPage('meeting')">Book Meeting</a>
+    </div>
+    <div class="footer-copy">© 2026 Exponential Community</div>
+  </footer>
+</div>
 
-<!-- Temporary closing tags for commit 16. Next commit continues the full page. -->
+<!-- ============================================
+     ACTIVITIES PAGE
+     ============================================ -->
+<div id="page-activities" class="page">
+  <section id="activities-hero" style="background:var(--s1);border-bottom:1px solid var(--border)">
+    <div class="activities-hero-inner">
+      <div class="mono-tag">activities.live</div>
+      <h1 class="section-title reveal">You Don't Just Learn Here.<br>You Build, Connect,<br>and Grow.</h1>
+      <p class="section-sub reveal">Workshops, hackathons, events, and challenges designed to turn learning into real experience that matters on your CV and in your career.</p>
+    </div>
+  </section>
+  <div class="activities-main">
+    <div class="activities-inner">
+      <div class="mono-tag">why.it.matters</div>
+      <h2 class="section-title reveal" style="font-size:1.8rem;margin-bottom:0">Why activities matter more than tutorials.</h2>
+      <div class="why-rows reveal" style="margin-top:2rem">
+        <div class="why-row"><div class="why-arrow">⚡</div><div><div class="why-title">Why Hackathons</div><div class="why-desc">Build under pressure, think fast, and turn ideas into real products. The fastest way to level up your skills.</div></div></div>
+        <div class="why-row"><div class="why-arrow">🛠️</div><div><div class="why-title">Why Workshops</div><div class="why-desc">Learn deeply through hands-on practice and real understanding — not passive watching or note-taking.</div></div></div>
+        <div class="why-row"><div class="why-arrow">👥</div><div><div class="why-title">Why Teams</div><div class="why-desc">Improve communication and gain real teamwork experience that employers actually care about.</div></div></div>
+        <div class="why-row"><div class="why-arrow">🌐</div><div><div class="why-title">Why Community</div><div class="why-desc">Build connections, meet developers, and unlock opportunities that come from knowing the right people.</div></div></div>
+      </div>
+      <div class="filter-bar" style="margin-top:3rem">
+        <button class="filter-pill active" onclick="filterActs(this,'all')">All</button>
+        <button class="filter-pill" onclick="filterActs(this,'workshop')">Workshops</button>
+        <button class="filter-pill" onclick="filterActs(this,'hackathon')">Hackathons</button>
+        <button class="filter-pill" onclick="filterActs(this,'event')">Events</button>
+        <button class="filter-pill" onclick="filterActs(this,'challenge')">Challenges</button>
+      </div>
+      <div class="activities-grid">
+        <div class="glass act-card reveal" data-type="hackathon">
+
+<!-- Temporary closing tags for commit 17. Next commit continues the full page. -->
 
 </body>
 </html>
