@@ -157,8 +157,60 @@ h1.hero-h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue),va
 .unlock-item{padding:1.4rem 1rem;text-align:center;border-radius:12px}
 .unlock-item-icon{font-size:1.8rem;margin-bottom:0.6rem}
 .unlock-item-name{font-family:var(--mono);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--sub)}
+.unlock-cta{margin-top:3rem}
 
-<!-- Temporary closing tags for commit 3. Next commit continues the full page. -->
+/* JOURNEY */
+#journey{background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.timeline{position:relative;margin-top:3rem}
+.timeline::before{content:'';position:absolute;left:27px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--blue),var(--purple),transparent)}
+.tl-step{position:relative;padding-left:78px;margin-bottom:1.5rem;cursor:pointer}
+.tl-dot{position:absolute;left:0;top:18px;width:54px;height:54px;border-radius:50%;background:var(--s2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:0.8rem;font-weight:600;color:var(--muted);z-index:1;transition:all 0.3s}
+.tl-step.active .tl-dot,.tl-step:hover .tl-dot{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 0 25px rgba(59,130,246,0.4)}
+.tl-card{background:var(--s2);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.5rem;transition:all 0.3s}
+.tl-step.active .tl-card{border-color:rgba(59,130,246,0.3)}
+.tl-card-head{display:flex;align-items:center;justify-content:space-between}
+.tl-card-title{font-weight:600;font-size:1rem;letter-spacing:-0.01em}
+.tl-you-here{font-family:var(--mono);font-size:0.65rem;color:var(--green);letter-spacing:0.1em;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:3px 8px;border-radius:4px}
+.tl-body{color:var(--sub);font-size:0.9rem;line-height:1.7;margin-top:0.8rem;padding-top:0.8rem;border-top:1px solid var(--border);display:none}
+.tl-step.active .tl-body{display:block}
+
+/* BOOST BENTO */
+#boost{background:var(--bg)}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1.2rem;margin-top:3rem}
+.bento-card{padding:1.8rem;min-height:160px}
+.bento-card.wide{grid-column:span 2}
+.bento-card.tall{grid-row:span 2}
+.bento-icon{font-size:1.6rem;margin-bottom:0.8rem}
+.bento-title{font-weight:700;font-size:1.05rem;margin-bottom:0.4rem;letter-spacing:-0.01em}
+.bento-desc{color:var(--sub);font-size:0.88rem;line-height:1.65}
+.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:5px;animation:livePulse 2s infinite}
+@keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,0.4)}50%{opacity:0.7;box-shadow:0 0 0 6px rgba(16,185,129,0)}}
+.bento-feed{font-family:var(--mono);font-size:0.78rem;color:var(--green);margin-top:0.8rem;padding:10px 12px;background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.15);border-radius:8px}
+
+/* CINEMATIC CTA */
+#cin-cta{position:relative;overflow:hidden;min-height:80vh;display:flex;align-items:center;background:var(--s1);border-top:1px solid var(--border)}
+.cin-bg-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(59,130,246,0.08) 0%,rgba(139,92,246,0.05) 40%,transparent 70%)}
+.cin-lines{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(255,255,255,0.015) 79px,rgba(255,255,255,0.015) 80px)}
+.cin-content{position:relative;z-index:1;max-width:680px;padding:7rem 5%}
+.cin-tag{font-family:var(--mono);font-size:0.72rem;color:var(--purple);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;display:block}
+.cin-h2{font-size:clamp(2.8rem,5vw,5rem);font-weight:900;letter-spacing:-0.05em;line-height:1.05;margin-bottom:1.5rem}
+.cin-h2 em{font-style:normal;background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cin-body{color:var(--sub);font-size:1.05rem;line-height:1.85;margin-bottom:1.5rem}
+.cin-trans{font-family:var(--mono);font-size:0.85rem;color:var(--muted);font-style:italic;margin-bottom:0.5rem}
+.cin-hook{font-size:1.6rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:2rem;background:linear-gradient(135deg,#fff,var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.cin-visual-svgs{position:absolute;right:5%;top:50%;transform:translateY(-50%);opacity:0.12;z-index:0}
+
+/* ============================================
+   TRACKS PAGE
+   ============================================ */
+#tracks-hero{min-height:55vh;display:flex;align-items:center;padding:8rem 5% 5rem;position:relative;overflow:hidden;text-align:center;justify-content:center}
+.tracks-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.025) 1px,transparent 1px);background-size:60px 60px}
+.tracks-hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(59,130,246,0.1) 0%,rgba(139,92,246,0.06) 50%,transparent 70%);pointer-events:none}
+.tracks-hero-content{position:relative;z-index:1;max-width:700px}
+.tracks-cards-section{padding:4rem 5% 7rem}
+.tracks-cards-inner{max-width:1100px;margin:0 auto}
+
+<!-- Temporary closing tags for commit 4. Next commit continues the full page. -->
 
 </body>
 </html>
