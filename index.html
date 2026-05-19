@@ -1,109 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exponential Community</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exponential Community — Developer OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050508;
+  --s1:#0C0C14;
+  --s2:#12121F;
+  --blue:#3B82F6;
+  --purple:#8B5CF6;
+  --green:#10B981;
+  --text:#F1F5F9;
+  --sub:#94A3B8;
+  --muted:#475569;
+  --border:rgba(255,255,255,0.06);
+  --border-active:rgba(59,130,246,0.3);
+  --glow-blue:rgba(59,130,246,0.15);
+  --glow-purple:rgba(139,92,246,0.12);
+  --head:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--head);font-size:16px;line-height:1.7;overflow-x:hidden;min-height:100vh}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+/* CURSOR GLOW */
+#cursor-glow{position:fixed;pointer-events:none;z-index:9999;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.06) 0%,transparent 70%);transform:translate(-50%,-50%);transition:left 0.6s ease,top 0.6s ease;top:50%;left:50%}
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
-</head>
+/* BOOT SCREEN */
+#boot{position:fixed;inset:0;background:#000;z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--mono)}
+.boot-term{width:min(500px,90vw);text-align:left}
+.boot-line{font-size:0.85rem;color:#3B82F6;line-height:2;opacity:0;animation:bootLine 0.4s ease forwards}
+.boot-line.green{color:#10B981}
+.boot-line.dim{color:#475569}
+.boot-logo{margin-top:2.5rem;text-align:center;opacity:0;animation:fadeIn 1s 3.2s ease forwards}
+.boot-logo-text{font-family:var(--head);font-size:2rem;font-weight:900;letter-spacing:-0.04em;background:linear-gradient(135deg,#fff,#3B82F6,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;filter:drop-shadow(0 0 40px rgba(59,130,246,0.5))}
+.boot-skip{position:fixed;top:1.5rem;right:2rem;background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 16px;border-radius:6px;font-family:var(--mono);font-size:0.75rem;cursor:pointer;z-index:1001;transition:all 0.2s}
+.boot-skip:hover{border-color:var(--blue);color:var(--blue)}
+@keyframes bootLine{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+@keyframes fadeIn{from{opacity:0;filter:blur(20px)}to{opacity:1;filter:blur(0)}}
 
-<body>
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:64px;background:rgba(5,5,8,0.8);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:all 0.3s}
+.nav-logo{font-weight:900;font-size:1.1rem;letter-spacing:-0.03em;background:linear-gradient(135deg,#fff 0%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links li a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;padding:0 1rem;height:64px;display:flex;align-items:center;transition:color 0.2s;border-bottom:2px solid transparent;cursor:pointer}
+.nav-links li a:hover,.nav-links li a.active{color:var(--text);border-bottom-color:var(--blue)}
+.nav-right{display:flex;gap:0.75rem;align-items:center}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--sub);padding:8px 18px;border-radius:7px;font-family:var(--head);font-size:0.85rem;font-weight:500;cursor:pointer;transition:all 0.2s}
 
-  <!-- Navigation -->
-  <nav class="main-nav">
-    <div class="nav-logo">Exponential</div>
+<!-- Temporary closing tags for commit 1. Next commit continues the full page. -->
 
-    <ul class="nav-links">
-      <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-      <li><a href="#" class="nav-link" data-page="tracks">Tracks</a></li>
-      <li><a href="#" class="nav-link" data-page="activities">Activities</a></li>
-      <li><a href="#" class="nav-link" data-page="achievements">Achievements</a></li>
-      <li><a href="#" class="nav-link" data-page="membership">Membership</a></li>
-      <li><a href="#" class="nav-link" data-page="meeting">Book Free Meeting</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <button class="btn btn-outline">Login</button>
-      <button class="btn btn-primary">Sign Up</button>
-    </div>
-  </nav>
-
-  <!-- Home Page -->
-  <main id="page-home" class="page active">
-    <section class="hero-section">
-      <p class="eyebrow">developer_os.v2 — Egypt & MENA</p>
-      <h1>Stop Learning.<br><span>Start Becoming.</span></h1>
-      <p class="hero-description">
-        A structured system for developers who are ready to grow through real tracks,
-        projects, events, workshops, and hackathons.
-      </p>
-
-      <div class="hero-actions">
-        <button class="btn btn-primary">Enter the System</button>
-        <button class="btn btn-outline">See How It Works</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- Tracks Page -->
-  <main id="page-tracks" class="page">
-    <section class="page-section">
-      <p class="eyebrow">tracks.identity</p>
-      <h2>Enter the World of Exponential</h2>
-      <p>Each track is more than a skill — it is a way of thinking.</p>
-    </section>
-  </main>
-
-  <!-- Activities Page -->
-  <main id="page-activities" class="page">
-    <section class="page-section">
-      <p class="eyebrow">activities.system</p>
-      <h2>Activities, Events, Workshops & Hackathons</h2>
-      <p>Learn by doing, collaborating, and building real experience.</p>
-    </section>
-  </main>
-
-  <!-- Achievements Page -->
-  <main id="page-achievements" class="page">
-    <section class="page-section">
-      <p class="eyebrow">achievements.progress</p>
-      <h2>Achievements & Projects</h2>
-      <p>Showcase member progress, scores, projects, and certificates.</p>
-    </section>
-  </main>
-
-  <!-- Membership Page -->
-  <main id="page-membership" class="page">
-    <section class="page-section">
-      <p class="eyebrow">membership.access</p>
-      <h2>Choose Your Membership</h2>
-      <p>Free and premium access options for different developer needs.</p>
-    </section>
-  </main>
-
-  <!-- Meeting Page -->
-  <main id="page-meeting" class="page">
-    <section class="page-section">
-      <p class="eyebrow">meeting.booking</p>
-      <h2>Book a Free Meeting</h2>
-      <p>Start with a free meeting through WhatsApp or Discord.</p>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <h3>Exponential</h3>
-    <p>Developer OS — Egypt & MENA</p>
-  </footer>
-
-  <!-- Main JavaScript -->
-  <script src="assets/js/app.js"></script>
 </body>
 </html>
