@@ -1,0 +1,25 @@
+{
+  "name": "exponential-community-website-",
+  "version": "1.0.0",
+  "description": "- **ADD Dr. Soliman AS CONTRIBUTOR: karim.soliman@pua.edu.eg**\r - **ID:** 202200716\r - **Name:** habiba ghreeb farag\r - **Frontend:** Your frontend framework?\r - **Backend:** Your backend framework?\r - **README file:** write a suitable Readme.md file for other users who are reviewing your project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HabibaGhreeb/Exponential-Community-Website-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/HabibaGhreeb/Exponential-Community-Website-/issues"
+  },
+  "homepage": "https://github.com/HabibaGhreeb/Exponential-Community-Website-#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
