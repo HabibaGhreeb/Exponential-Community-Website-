@@ -1264,8 +1264,55 @@ function goPage(name){
     a.classList.toggle('active', a.dataset.page===name);
   });
   window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(triggerReveal,100);
+}
 
-<!-- Temporary closing tags for commit 24. Next commit continues the full page. -->
+// ACCORDION
+function toggleAcc(btn){
+  const item=btn.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.acc-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen) item.classList.add('open');
+}
 
+// TIMELINE STEPS
+function toggleStep(el){
+  document.querySelectorAll('.tl-step').forEach(s=>{if(s!==el)s.classList.remove('active')});
+  el.classList.toggle('active');
+}
+
+// ACTIVITY FILTER
+function filterActs(btn, type){
+  document.querySelectorAll('.filter-pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.act-card').forEach(card=>{
+    if(type==='all' || card.dataset.type===type){
+      card.style.display='';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+
+// SCROLL REVEAL
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((entry,i)=>{
+    if(entry.isIntersecting){
+      setTimeout(()=>entry.target.classList.add('visible'), i*80);
+    }
+  });
+},{threshold:0.1});
+
+function triggerReveal(){
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+triggerReveal();
+window.addEventListener('scroll',triggerReveal);
+
+// NAV click handler attachment
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.setAttribute('data-page', a.getAttribute('data-page') || a.textContent.toLowerCase().replace(/\s+/g,'').replace('bookfreemeeting','meeting').replace('home','home').replace('tracks','tracks').replace('activities','activities').replace('achievements','achievements').replace('membership','membership'));
+});
+</script>
 </body>
 </html>
