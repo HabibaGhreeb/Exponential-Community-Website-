@@ -315,8 +315,61 @@ h1.hero-h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue),va
 .plan-cta-btn{width:100%;padding:12px;border:none;border-radius:8px;font-family:var(--head);font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.2s}
 .plan-cta-btn.free{background:transparent;border:1px solid var(--border);color:var(--text)}
 .plan-cta-btn.free:hover{border-color:var(--blue);color:var(--blue)}
+.plan-cta-btn.prem{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;box-shadow:0 0 30px rgba(59,130,246,0.25)}
+.plan-cta-btn.prem:hover{box-shadow:0 0 50px rgba(59,130,246,0.4)}
+.comparison-title{font-size:1.4rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:-0.02em}
+.comparison-table{width:100%;border-collapse:collapse;border-radius:16px;overflow:hidden}
+.comparison-table th{background:var(--s2);padding:1rem 1.5rem;text-align:left;font-size:0.85rem;font-weight:600;border-bottom:1px solid var(--border)}
+.comparison-table th:last-child,.comparison-table th:nth-last-child(2){text-align:center;width:140px}
+.comparison-table td{padding:0.9rem 1.5rem;border-bottom:1px solid var(--border);font-size:0.9rem;color:var(--sub)}
+.comparison-table tr:last-child td{border-bottom:none}
+.comparison-table td:last-child,.comparison-table td:nth-last-child(2){text-align:center}
+.comparison-table tr:hover td{background:rgba(255,255,255,0.01)}
+.check{color:var(--green);font-size:1rem}
+.lock{color:var(--muted);font-size:0.85rem}
 
-<!-- Temporary closing tags for commit 6. Next commit continues the full page. -->
+/* ============================================
+   BOOK MEETING PAGE
+   ============================================ */
+#meeting-hero{min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 5% 5rem;position:relative;overflow:hidden}
+.meeting-main{padding:5rem 5% 7rem}
+.meeting-inner{max-width:900px;margin:0 auto}
+.meeting-cards{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+.meeting-card{padding:2.5rem;position:relative}
+.meeting-card.recommended{border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.02)}
+.recommended-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);color:var(--green);font-family:var(--mono);font-size:0.68rem;letter-spacing:0.1em;padding:4px 10px;border-radius:4px;margin-bottom:1.2rem}
+.meeting-platform-icon{font-size:2.5rem;margin-bottom:1rem}
+.meeting-card-title{font-size:1.35rem;font-weight:700;margin-bottom:0.5rem;letter-spacing:-0.02em}
+.meeting-card-desc{color:var(--sub);font-size:0.9rem;margin-bottom:1.5rem;line-height:1.65}
+.meeting-number{font-family:var(--mono);font-size:0.85rem;color:var(--text);margin-bottom:1rem;padding:10px 14px;background:var(--s1);border-radius:8px;border:1px solid var(--border)}
+.meeting-prefilled{font-size:0.8rem;color:var(--muted);margin-bottom:1.5rem;font-style:italic}
+.meeting-flow{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.5rem}
+.meeting-flow li{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--sub)}
+.meeting-flow li .step-num{font-family:var(--mono);font-size:0.7rem;background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.2);color:var(--blue);width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.meeting-btn{width:100%;padding:12px;border:none;border-radius:8px;font-family:var(--head);font-size:0.95rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.meeting-btn.wa{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
+.meeting-btn.wa:hover{box-shadow:0 0 30px rgba(34,197,94,0.3)}
+.meeting-btn.dc{background:linear-gradient(135deg,#5865F2,var(--purple));color:#fff}
+.meeting-btn.dc:hover{box-shadow:0 0 30px rgba(88,101,242,0.3)}
+.why-meeting{margin-top:2rem;padding:3rem;background:var(--s1);border:1px solid var(--border);border-radius:20px}
+.why-meeting-title{font-size:1.25rem;font-weight:700;margin-bottom:1.5rem;letter-spacing:-0.02em}
+.why-meeting-items{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.why-meeting-item{display:flex;align-items:flex-start;gap:12px;padding:1rem;background:var(--s2);border-radius:10px;border:1px solid var(--border)}
+.why-meeting-icon{font-size:1.3rem;flex-shrink:0}
+.why-meeting-text{font-size:0.9rem;color:var(--sub)}
+
+/* FOOTER */
+footer{background:var(--s1);border-top:1px solid var(--border);padding:4rem 5%;text-align:center}
+.footer-logo{font-weight:900;font-size:1.2rem;letter-spacing:-0.03em;background:linear-gradient(135deg,#fff,var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:0.8rem}
+.footer-tagline{color:var(--muted);font-size:0.85rem;margin-bottom:2rem}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.footer-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;cursor:pointer}
+.footer-links a:hover{color:var(--sub)}
+.footer-copy{font-family:var(--mono);font-size:0.7rem;color:var(--muted)}
+
+/* RESPONSIVE */
+
+<!-- Temporary closing tags for commit 7. Next commit continues the full page. -->
 
 </body>
 </html>
