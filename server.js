@@ -106,6 +106,38 @@ app.post("/api/login", (req, res) => {
   });
 });
 
+app.post("/api/book-meeting", (req, res) => {
+  const { name, email, platform, preferredDate } = req.body;
+
+  if (!name || !email || !platform) {
+    return res.status(400).json({
+      success: false,
+      message: "Name, email, and platform are required"
+    });
+  }
+
+  const meetings = readData("meetings.json");
+
+  const newMeeting = {
+    id: Date.now(),
+    name,
+    email,
+    platform,
+    preferredDate: preferredDate || "Not selected",
+    status: "pending",
+    createdAt: new Date().toISOString()
+  };
+
+  meetings.push(newMeeting);
+  writeData("meetings.json", meetings);
+
+  res.json({
+    success: true,
+    message: "Meeting booked successfully",
+    meeting: newMeeting
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
