@@ -1211,8 +1211,61 @@ footer{background:var(--s1);border-top:1px solid var(--border);padding:4rem 5%;t
             <div class="why-meeting-icon">🗺️</div>
             <div class="why-meeting-text">Explain the full community system and how it works</div>
           </div>
+          <div class="why-meeting-item">
+            <div class="why-meeting-icon">🔓</div>
+            <div class="why-meeting-text">Guide you to the Free or Premium path that fits you</div>
+          </div>
+        </div>
+      </div>
 
-<!-- Temporary closing tags for commit 23. Next commit continues the full page. -->
+      <div style="text-align:center;margin-top:4rem" class="reveal">
+        <div class="mono-tag" style="justify-content:center">start.here</div>
+        <h2 class="section-title" style="font-size:2rem">Your journey starts with<br>one conversation.</h2>
+        <p class="section-sub" style="margin:0 auto 2rem">Book your free meeting and discover where you fit inside Exponential.</p>
+        <button class="btn-primary" style="font-size:1rem;padding:14px 36px">Book Now →</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo">Exponential</div>
+    <div class="footer-tagline">Developer OS — Egypt &amp; MENA</div>
+    <div class="footer-links"><a onclick="goPage('home')">Home</a><a onclick="goPage('tracks')">Tracks</a><a onclick="goPage('activities')">Activities</a><a onclick="goPage('membership')">Membership</a><a onclick="goPage('meeting')">Book Meeting</a></div>
+    <div class="footer-copy">© 2026 Exponential Community</div>
+  </footer>
+</div>
+
+<script>
+// BOOT
+let booted = false;
+function skipBoot(){
+  document.getElementById('boot').style.opacity='0';
+  document.getElementById('boot').style.transition='opacity 0.5s';
+  setTimeout(()=>{document.getElementById('boot').style.display='none';},500);
+  booted=true;
+}
+setTimeout(()=>{
+  document.getElementById('boot').style.opacity='0';
+  document.getElementById('boot').style.transition='opacity 1s';
+  setTimeout(()=>{
+    document.getElementById('boot').style.display='none';
+    booted=true;
+  },1000);
+},4500);
+
+// CURSOR GLOW
+const glow=document.getElementById('cursor-glow');
+document.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px'});
+
+// PAGE ROUTING
+function goPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.classList.toggle('active', a.dataset.page===name);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+
+<!-- Temporary closing tags for commit 24. Next commit continues the full page. -->
 
 </body>
 </html>
